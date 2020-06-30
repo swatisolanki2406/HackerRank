@@ -1,0 +1,30 @@
+#!/bin/python3
+from collections import Counter
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the checkMagazine function below.
+def checkMagazine(magazine, note):
+    c = Counter(magazine)
+    for i in note:
+        if c[i] > 0:
+            c[i] -= 1
+        else:
+            return print("No")
+    return print("Yes")
+
+if __name__ == '__main__':
+    mn = input().split()
+
+    m = int(mn[0])
+
+    n = int(mn[1])
+
+    magazine = input().rstrip().split()
+
+    note = input().rstrip().split()
+
+    checkMagazine(magazine, note)
